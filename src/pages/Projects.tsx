@@ -16,7 +16,6 @@ interface Project {
 }
 
 const Projects = () => {
-  // Sample projects - you can replace these with real data
   const projects: Project[] = [
     {
       id: 1,
@@ -35,7 +34,7 @@ const Projects = () => {
       image: "/api/placeholder/400/250",
       technologies: ["Python", "Apache Kafka", "AWS", "Docker", "PostgreSQL", "Redis"],
       githubUrl: "#",
-      featured: true
+      featured: false
     },
     {
       id: 3,
@@ -58,25 +57,19 @@ const Projects = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Header */}
-      <section className="section-container pt-32 pb-8">
-        <div className="text-center space-y-4">
-          <h1 className="text-4xl font-bold text-foreground">My Projects</h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A collection of projects showcasing my passion for data analytics, machine learning, and software engineering.
-          </p>
-        </div>
-      </section>
-
       <WavyDivider />
 
-      {/* Featured Projects */}
       <section className="max-w-4xl mx-auto pt-16 pb-8">
-        <h2 className="text-2xl font-semibold mb-8 text-foreground">Featured Projects</h2>
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
+        <h2 className="text-2xl font-semibold mb-8 text-foreground group cursor-pointer">
+          <span className="relative
+            before:absolute before:left-0 before:-bottom-1 before:h-0.5 before:bg-primary before:w-0 before:transition-all before:duration-300 group-hover:before:w-full">
+            Currently Building
+          </span>
+        </h2>
+        <div className="grid md:grid-cols-1 gap-8 mb-12">
           {projects.filter(project => project.featured).map((project) => (
             <Card key={project.id} className="group overflow-hidden border-line-primary hover:shadow-lg transition-all duration-300">
-              <div className="aspect-video bg-muted overflow-hidden">
+              <div className="aspect-[3/1] bg-muted overflow-hidden">
                 <div className="w-full h-full bg-gradient-to-br from-line-secondary to-line-primary flex items-center justify-center">
                   <span className="text-white font-medium">Project Image</span>
                 </div>
@@ -124,9 +117,14 @@ const Projects = () => {
       <WavyDivider />
 
       {/* All Projects */}
-      <section className="max-w-4xl mx-auto pt-16 pb-8">
-        <h2 className="text-2xl font-semibold mb-8 text-foreground">All Projects</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <section className="max-w-4xl mx-auto pb-8">
+        <h2 className="text-2xl font-semibold mb-8 text-foreground group cursor-pointer">
+          <span className="relative
+            before:absolute before:left-0 before:-bottom-1 before:h-0.5 before:bg-primary before:w-0 before:transition-all before:duration-300 group-hover:before:w-full">
+            All Projects
+          </span>
+        </h2>
+        <div className="grid md:grid-cols-2 gap-6">
           {projects.map((project) => (
             <Card key={project.id} className="group overflow-hidden border-line-primary hover:shadow-md transition-all duration-300">
               <div className="aspect-video bg-muted overflow-hidden">

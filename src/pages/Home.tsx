@@ -44,30 +44,42 @@ const Home = () => {
           {/* About Content */}
           <div className="space-y-6 flex-1 lg:ml-8">
             <div>
-              <h2 className="text-2xl font-semibold mb-4 text-foreground">About me:</h2>
-              <ul className="space-y-3">
+              <h2 className="text-2xl font-semibold mb-4 text-foreground group cursor-pointer">
+                <span className="relative
+                  before:absolute before:left-0 before:-bottom-1 before:h-0.5 before:bg-primary before:w-0 before:transition-all before:duration-300 group-hover:before:w-full">
+                  About me:
+                </span>
+              </h2>
+              <ul className="list-disc pl-6 space-y-3">
                 {aboutPoints.map((point, index) => (
                   <li 
                     key={index} 
-                    className="bullet-hover flex items-start gap-3 text-muted-foreground"
+                    className="group text-muted-foreground cursor-pointer"
                   >
-                    <span className="w-2 h-2 bg-line-primary rounded-full mt-2 flex-shrink-0"></span>
-                    <span>{point}</span>
+                    <span className="inline-block transition-colors transition-transform duration-200 group-hover:text-primary group-hover:translate-x-1">
+                      {point}
+                    </span>
                   </li>
                 ))}
               </ul>
             </div>
 
             <div>
-              <h3 className="text-xl font-medium mb-3 text-foreground">Previously I've:</h3>
-              <ul className="space-y-2">
+              <h3 className="text-xl font-medium mb-3 text-foreground group cursor-pointer">
+                <span className="relative
+                  before:absolute before:left-0 before:-bottom-1 before:h-0.5 before:bg-primary before:w-0 before:transition-all before:duration-300 group-hover:before:w-full">
+                  Previously I've:
+                </span>
+              </h3>
+              <ul className="list-disc pl-6 space-y-2">
                 {previousExperience.map((experience, index) => (
                   <li 
                     key={index} 
-                    className="bullet-hover flex items-start gap-3 text-muted-foreground"
+                    className="group text-muted-foreground cursor-pointer"
                   >
-                    <span className="w-2 h-2 bg-line-secondary rounded-full mt-2 flex-shrink-0"></span>
-                    <span>{experience}</span>
+                    <span className="inline-block transition-colors transition-transform duration-200 group-hover:text-primary group-hover:translate-x-1">
+                      {experience}
+                    </span>
                   </li>
                 ))}
               </ul>

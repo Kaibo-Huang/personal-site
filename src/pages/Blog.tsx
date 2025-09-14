@@ -20,51 +20,14 @@ const Blog = () => {
   const blogPosts: BlogPost[] = [
     {
       id: 1,
-      title: "Title",
-      excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam eros, a bibendum nulla sapien eget urna.",
-      date: "2024-03-15",
-      readTime: "8 min read",
-      category: "Machine Learning",
-      slug: "ml-sports-analytics-nhl",
+      title: "First Post!",
+      excerpt: "Hello World",
+      date: "2024-09-14",
+      readTime: "1 min read",
+      category: "First Post",
+      slug: "firstPost",
       featured: true
     },
-    {
-      id: 2,
-      title: "Title",
-      excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae velit ex. Mauris dapibus risus quis suscipit vulputate.",
-      date: "2024-03-10",
-      readTime: "6 min read",
-      category: "Data Engineering",
-      slug: "scalable-data-pipelines-kafka",
-      featured: true
-    },
-    {
-      id: 3,
-      title: "Title",
-      excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus.",
-      date: "2024-03-05",
-      readTime: "4 min read",
-      category: "Career",
-      slug: "finance-to-tech-journey"
-    },
-    {
-      id: 4,
-      title: "Title",
-      excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque placerat facilisis egestas. Nam ultricies, diam nec convallis cursus.",
-      date: "2024-02-28",
-      readTime: "10 min read",
-      category: "AI/ML",
-      slug: "understanding-llms-guide"
-    },
-    {
-      id: 5,
-      title: "Title",
-      excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam eros, a bibendum nulla sapien eget urna.",
-      date: "2024-02-20",
-      readTime: "7 min read",
-      category: "Sports Analytics",
-      slug: "psychology-sports-analytics"
-    }
   ];
 
   const formatDate = (dateString: string) => {
@@ -77,19 +40,9 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Header */}
-      <section className="max-w-4xl mx-auto pt-16 pb-8">
-        <div className="text-center space-y-4">
-          <h1 className="text-4xl font-bold text-foreground">My Blog</h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-           Title
-          </p>
-        </div>
-      </section>
-
       <WavyDivider />
-
-      {/* Featured Posts */}
+      {/* 
+      Featured Posts
       <section className="max-w-4xl mx-auto pt-16 pb-8">
         <h2 className="text-2xl font-semibold mb-8 text-foreground">Featured Posts</h2>
         <div className="grid md:grid-cols-2 gap-8 mb-12">
@@ -124,12 +77,17 @@ const Blog = () => {
           ))}
         </div>
       </section>
-
+      */}
       <WavyDivider />
 
       {/* All Posts */}
       <section className="max-w-4xl mx-auto pt-16 pb-8">
-        <h2 className="text-2xl font-semibold mb-8 text-foreground">All Posts</h2>
+        <h2 className="text-2xl font-semibold mb-8 text-foreground group cursor-pointer">
+          <span className="relative
+            before:absolute before:left-0 before:-bottom-1 before:h-0.5 before:bg-primary before:w-0 before:transition-all before:duration-300 group-hover:before:w-full">
+            All Posts
+          </span>
+        </h2>
         <div className="space-y-6">
           {blogPosts.map((post) => (
             <Card key={post.id} className="group border-line-primary hover:shadow-md transition-all duration-300">
@@ -167,13 +125,6 @@ const Blog = () => {
               </CardContent>
             </Card>
           ))}
-        </div>
-        
-        {/* Load More Button */}
-        <div className="text-center mt-12">
-          <Button variant="outline" size="lg">
-            Load More Posts
-          </Button>
         </div>
       </section>
     </div>

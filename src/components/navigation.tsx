@@ -24,9 +24,12 @@ const Navigation = () => {
           {/* Logo/Name */}
           <Link 
             to="/" 
-            className="text-xl font-semibold text-foreground hover:text-primary transition-colors hand-drawn-line"
+            className="text-xl font-semibold text-foreground hover:text-primary transition-colors hand-drawn-line group cursor-pointer"
           >
-            Kaibo Huang
+            <span className="relative
+              before:absolute before:left-0 before:-bottom-1 before:h-0.5 before:bg-primary before:w-0 before:transition-all before:duration-300 group-hover:before:w-full">
+              Kaibo Huang
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -35,13 +38,16 @@ const Navigation = () => {
               <Link
                 key={item.name}
                 to={item.path}
-                className={`text-sm font-medium transition-colors hand-drawn-line ${
+                className={`text-sm font-medium transition-colors hand-drawn-line group cursor-pointer ${
                   isActive(item.path)
                     ? "text-primary"
                     : "text-muted-foreground hover:text-foreground"
                 }`}
               >
-                {item.name}
+                <span className="relative
+                  before:absolute before:left-0 before:-bottom-1 before:h-0.5 before:bg-primary before:w-0 before:transition-all before:duration-300 group-hover:before:w-full">
+                  {item.name}
+                </span>
               </Link>
             ))}
             
@@ -89,13 +95,16 @@ const Navigation = () => {
                   key={item.name}
                   to={item.path}
                   onClick={() => setIsMenuOpen(false)}
-                  className={`text-sm font-medium transition-colors hand-drawn-line ${
+                  className={`text-sm font-medium transition-colors hand-drawn-line group cursor-pointer ${
                     isActive(item.path)
                       ? "text-primary"
                       : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
-                  {item.name}
+                  <span className="relative
+                    before:absolute before:left-0 before:-bottom-1 before:h-0.5 before:bg-primary before:w-0 before:transition-all before:duration-300 group-hover:before:w-full">
+                    {item.name}
+                  </span>
                 </Link>
               ))}
             </div>
