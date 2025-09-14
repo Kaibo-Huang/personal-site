@@ -5,7 +5,7 @@ import { Github, Linkedin, Mail, Twitter } from "lucide-react";
 
 const Home = () => {
   const aboutPoints = [
-    "Software engineering + Schulich Leader @ UWaterloo",
+    "Software Engineering + Schulich Leader (120k) @ UWaterloo",
     "Interested in big data analytics & LLMs, specifically in analyzing large-scale datasets for trends, predictive modeling, sports analytics, finance, and human behavior insights",
     "Huge sports fan (Liverpool FC, Toronto Maple Leafs, Milwaukee Bucks) + chipotle addict"
   ];
@@ -25,19 +25,19 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="section-container-tight pt-16 pb-8">
-        <div className="flex flex-col lg:flex-row gap-8 items-start">
+      <section className="max-w-4xl mx-auto pt-16 pb-8">
+        <div className="flex flex-col lg:flex-row gap-8 items-center">
           {/* Profile Image */}
           <div className="flex justify-center lg:justify-start flex-shrink-0">
             <div className="relative">
-              <div className="w-64 h-64 rounded-full bg-muted hand-drawn-circle overflow-hidden animate-float">
+              <div className="w-72 h-72 rounded-full bg-muted hand-drawn-circle overflow-hidden animate-float">
                 {/* Placeholder for profile image */}
                 <div className="w-full h-full bg-gradient-to-br from-line-secondary to-line-primary flex items-center justify-center">
                   <span className="text-7xl font-light text-white">KH</span>
                 </div>
               </div>
               {/* Subtle glow effect */}
-              <div className="absolute inset-0 w-64 h-64 rounded-full bg-line-primary opacity-20 blur-xl -z-10"></div>
+              <div className="absolute inset-0 w-72 h-72 rounded-full bg-line-primary opacity-20 blur-xl -z-10"></div>
             </div>
           </div>
 

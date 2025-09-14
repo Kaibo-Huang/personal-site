@@ -78,7 +78,7 @@ const Blog = () => {
   return (
     <div className="min-h-screen">
       {/* Header */}
-      <section className="section-container pt-32 pb-8">
+      <section className="max-w-4xl mx-auto pt-16 pb-8">
         <div className="text-center space-y-4">
           <h1 className="text-4xl font-bold text-foreground">My Blog</h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -90,7 +90,7 @@ const Blog = () => {
       <WavyDivider />
 
       {/* Featured Posts */}
-      <section className="section-container py-16">
+      <section className="max-w-4xl mx-auto pt-16 pb-8">
         <h2 className="text-2xl font-semibold mb-8 text-foreground">Featured Posts</h2>
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           {blogPosts.filter(post => post.featured).map((post) => (
@@ -128,7 +128,7 @@ const Blog = () => {
       <WavyDivider />
 
       {/* All Posts */}
-      <section className="section-container py-16">
+      <section className="max-w-4xl mx-auto pt-16 pb-8">
         <h2 className="text-2xl font-semibold mb-8 text-foreground">All Posts</h2>
         <div className="space-y-6">
           {blogPosts.map((post) => (

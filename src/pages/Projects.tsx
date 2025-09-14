@@ -71,7 +71,7 @@ const Projects = () => {
       <WavyDivider />
 
       {/* Featured Projects */}
-      <section className="section-container py-16">
+      <section className="max-w-4xl mx-auto pt-16 pb-8">
         <h2 className="text-2xl font-semibold mb-8 text-foreground">Featured Projects</h2>
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           {projects.filter(project => project.featured).map((project) => (
@@ -124,7 +124,7 @@ const Projects = () => {
       <WavyDivider />
 
       {/* All Projects */}
-      <section className="section-container py-16">
+      <section className="max-w-4xl mx-auto pt-16 pb-8">
         <h2 className="text-2xl font-semibold mb-8 text-foreground">All Projects</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project) => (
