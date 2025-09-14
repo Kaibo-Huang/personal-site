@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import WavyDivider from "@/components/wavy-divider";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
+import Footer from "@/components/footer";
 
 interface BlogPost {
   id: number;
@@ -39,7 +40,7 @@ const Blog = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen px-4 sm:px-0">
       <WavyDivider />
       {/* 
       Featured Posts
@@ -127,6 +128,7 @@ const Blog = () => {
           ))}
         </div>
       </section>
+      <Footer />
     </div>
   );
 };

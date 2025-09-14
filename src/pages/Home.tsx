@@ -2,17 +2,42 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import WavyDivider from "@/components/wavy-divider";
 import { Github, Linkedin, Mail, Twitter } from "lucide-react";
+import Footer from "@/components/footer";
 
 const Home = () => {
+  // Helper for underline animation on bolded words
+  const BoldUnderline = ({ children }: { children: React.ReactNode }) => (
+    <span className="font-bold relative bold-underline">
+      <span className="relative z-10">{children}</span>
+      <span
+        className="
+          absolute left-0 -bottom-1 h-0.5 w-0
+          transition-all duration-300
+          group-hover:w-full
+          dark:bg-white bg-black
+        "
+        aria-hidden="true"
+      />
+    </span>
+  );
+
   const aboutPoints = [
-    "Software Engineering + Schulich Leader (120k) @ UWaterloo",
-    "Interested in big data analytics & LLMs, specifically in analyzing large-scale datasets for trends, predictive modeling, sports analytics, finance, and human behavior insights",
-    "Huge sports fan (Liverpool FC, Toronto Maple Leafs, Milwaukee Bucks) + chipotle addict"
+    <>
+      Software Engineering + <BoldUnderline>Schulich Leader</BoldUnderline> (120k) @ <BoldUnderline>UWaterloo</BoldUnderline>
+    </>,
+    <>
+      Interested in <BoldUnderline>big data analytics &amp; LLMs</BoldUnderline>, specifically in analyzing large-scale datasets for trends, predictive modeling, sports analytics, finance, and human behavior
+    </>,
+    "SPORTS FAN!!! (Liverpool, Toronto Maple Leafs, Milwaukee Bucks)"
   ];
 
   const previousExperience = [
-    "Interned @ RBC, managing API proxies",
-    "Researched HRI @ McMaster University"
+    <>
+      Interned <BoldUnderline>RBC</BoldUnderline>, managing API proxies
+    </>,
+    <>
+      Researched <BoldUnderline>HRI</BoldUnderline> @ McMaster University
+    </>
   ];
 
   const socialLinks = [
@@ -23,7 +48,7 @@ const Home = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen dark:bg-background px-4 sm:px-0">
       {/* Hero Section */}
       <section className="max-w-4xl mx-auto pt-16 pb-8">
         <div className="flex flex-col lg:flex-row gap-8 items-center">
@@ -54,9 +79,9 @@ const Home = () => {
                 {aboutPoints.map((point, index) => (
                   <li 
                     key={index} 
-                    className="group text-muted-foreground cursor-pointer"
+                    className="group text-muted-foreground cursor-pointer align-top"
                   >
-                    <span className="inline-block transition-colors transition-transform duration-200 group-hover:text-primary group-hover:translate-x-1">
+                    <span className="inline-block transition-colors transition-transform duration-200 group-hover:text-primary group-hover:translate-x-1 align-top">
                       {point}
                     </span>
                   </li>
@@ -93,34 +118,20 @@ const Home = () => {
       {/* Contact Section */}
       <section className="section-container-tight py-5">
         <div className="text-center space-y-8">
-          <h2 className="text-3xl font-semibold text-foreground">Get in Contact</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Let's connect and explore opportunities together. I'm always excited to discuss technology, sports, or potential collaborations.
-          </p>
-          
-          <Card className="p-8 max-w-md mx-auto border-line-primary bg-card">
-            <div className="flex justify-center gap-6">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.name}
-                  href={social.href}
-                  className={`p-3 rounded-full bg-secondary hover:bg-accent transition-all duration-300 hover:scale-110 ${social.color}`}
-                  aria-label={social.name}
-                >
-                  <social.icon className="w-6 h-6" />
-                </a>
-              ))}
-            </div>
-            <Button 
-              className="w-full mt-6" 
-              variant="default"
-              size="lg"
-            >
-              Say Hello!
-            </Button>
-          </Card>
+          <Button 
+            className="group relative mx-auto mb-8 px-14 py-7 text-lg font-semibold rounded-xl border border-line-primary bg-muted text-foreground overflow-hidden"
+            size="lg"
+            variant="outline"
+            asChild
+          >
+            <a href="/projects" className="relative z-10 transition-colors duration-300 group-hover:text-background">
+              I'm always building. Check it out! →
+              <span className="absolute inset-0 -z-10 bg-primary scale-x-0 transition-transform duration-500 origin-left group-hover:scale-x-100"></span>
+            </a>
+          </Button>
         </div>
       </section>
+      <Footer />
     </div>
   );
 };

@@ -18,7 +18,7 @@ const Navigation = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
+    <nav className="border-b px-4 sm:px-0" style={{ borderColor: "hsl(var(--primary) / 0.4)" }}>
       <div className="max-w-4xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo/Name */}
@@ -41,11 +41,12 @@ const Navigation = () => {
                 className={`text-sm font-medium transition-colors hand-drawn-line group cursor-pointer ${
                   isActive(item.path)
                     ? "text-primary"
-                    : "text-muted-foreground hover:text-foreground"
+                    : "text-muted-foreground hover:text-primary"
                 }`}
               >
-                <span className="relative
-                  before:absolute before:left-0 before:-bottom-1 before:h-0.5 before:bg-primary before:w-0 before:transition-all before:duration-300 group-hover:before:w-full">
+                <span className={`relative
+                  before:absolute before:left-0 before:-bottom-1 before:h-0.5 before:bg-primary before:transition-all before:duration-300
+                  ${isActive(item.path) ? "before:w-full" : "before:w-0 group-hover:before:w-full"}`}>
                   {item.name}
                 </span>
               </Link>
@@ -98,11 +99,12 @@ const Navigation = () => {
                   className={`text-sm font-medium transition-colors hand-drawn-line group cursor-pointer ${
                     isActive(item.path)
                       ? "text-primary"
-                      : "text-muted-foreground hover:text-foreground"
+                      : "text-muted-foreground hover:text-primary"
                   }`}
                 >
-                  <span className="relative
-                    before:absolute before:left-0 before:-bottom-1 before:h-0.5 before:bg-primary before:w-0 before:transition-all before:duration-300 group-hover:before:w-full">
+                  <span className={`relative
+                    before:absolute before:left-0 before:-bottom-1 before:h-0.5 before:bg-primary before:transition-all before:duration-300
+                    ${isActive(item.path) ? "before:w-full" : "before:w-0 group-hover:before:w-full"}`}>
                     {item.name}
                   </span>
                 </Link>

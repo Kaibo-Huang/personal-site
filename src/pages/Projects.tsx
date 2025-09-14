@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import WavyDivider from "@/components/wavy-divider";
 import { ExternalLink, Github } from "lucide-react";
+import Footer from "@/components/footer";
 
 interface Project {
   id: number;
@@ -56,7 +57,7 @@ const Projects = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen px-4 sm:px-0">
       <WavyDivider />
 
       <section className="max-w-4xl mx-auto pt-16 pb-8">
@@ -174,6 +175,7 @@ const Projects = () => {
           ))}
         </div>
       </section>
+      <Footer />
     </div>
   );
 };
