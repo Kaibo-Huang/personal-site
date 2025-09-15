@@ -9,48 +9,48 @@ All colors MUST be HSL.
 @layer base {
   :root {
     /* Soft, warm backgrounds */
-    --background: 32 20% 97%;
-    --foreground: 215 25% 15%;
+    --background: 40 60% 92%; /* beige/cream */
+    --foreground: 25 15% 25%; /* warm dark gray for text */
 
     /* Card backgrounds */
-    --card: 30 25% 99%;
-    --card-foreground: 215 25% 15%;
+    --card: 40 60% 97%; /* lighter beige */
+    --card-foreground: 25 15% 25%;
 
     /* Popover styling */
-    --popover: 30 25% 99%;
-    --popover-foreground: 215 25% 15%;
+    --popover: 40 60% 97%;
+    --popover-foreground: 25 15% 25%;
 
-    /* Primary blue - hand-drawn line color */
-    --primary: 215 85% 55%;
-    --primary-foreground: 0 0% 100%;
+    /* Primary - hand-drawn line color, hover, underline, etc. */
+    --primary: 40 40% 60%; /* darker beige for highlights/underline */
+    --primary-foreground: 25 15% 25%;
 
     /* Secondary soft tones */
-    --secondary: 215 20% 90%;
-    --secondary-foreground: 215 25% 15%;
+    --secondary: 40 60% 92%;
+    --secondary-foreground: 25 15% 25%;
 
     /* Muted elements */
-    --muted: 210 15% 88%;
-    --muted-foreground: 215 15% 45%;
+    --muted: 40 30% 85%; /* muted beige */
+    --muted-foreground: 25 10% 45%;
 
     /* Accent for hover states */
-    --accent: 215 75% 65%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 40 50% 55%; /* slightly different darker beige for hover */
+    --accent-foreground: 25 15% 25%;
 
     /* Destructive states */
     --destructive: 0 75% 60%;
     --destructive-foreground: 0 0% 100%;
 
     /* Borders and inputs */
-    --border: 215 20% 85%;
-    --input: 215 20% 85%;
-    --ring: 215 85% 55%;
+    --border: 40 30% 80%;
+    --input: 40 30% 80%;
+    --ring: 210 80% 55%;
 
     /* Design system extras */
     --radius: 0.75rem;
 
-  /* Animation durations */
-  --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Animation durations */
+    --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .dark {
@@ -105,8 +105,6 @@ All colors MUST be HSL.
     line-height: 1.6;
   }
 
-  /* ...existing code... */
-
   /* Smooth scrolling */
   html {
     scroll-behavior: smooth;
@@ -143,3 +141,4 @@ All colors MUST be HSL.
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-10px); }
 }
+

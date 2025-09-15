@@ -7,14 +7,14 @@ import Footer from "@/components/footer";
 const Home = () => {
   // Helper for underline animation on bolded words
   const BoldUnderline = ({ children }: { children: React.ReactNode }) => (
-    <span className="font-bold relative bold-underline text-gray-290">
+    <span className="font-bold relative bold-underline text-foreground">
       <span className="relative z-10">{children}</span>
       <span
         className="
           absolute left-0 -bottom-1 h-0.5 w-0
           transition-all duration-300
           group-hover:w-full
-          dark:bg-white bg-black
+          bg-primary dark:bg-white
         "
         aria-hidden="true"
       />
@@ -81,7 +81,7 @@ const Home = () => {
                     key={index} 
                     className="group text-muted-foreground cursor-pointer align-top"
                   >
-                    <span className="inline-block transition-colors transition-transform duration-200 group-hover:text-primary group-hover:translate-x-1 align-top">
+                    <span className="inline-block transition-colors transition-transform duration-200 group-hover:text-accent group-hover:translate-x-1 align-top">
                       {point}
                     </span>
                   </li>
@@ -102,7 +102,7 @@ const Home = () => {
                     key={index} 
                     className="group text-muted-foreground cursor-pointer"
                   >
-                    <span className="inline-block transition-colors transition-transform duration-200 group-hover:text-primary group-hover:translate-x-1">
+                    <span className="inline-block transition-colors transition-transform duration-200 group-hover:text-accent group-hover:translate-x-1">
                       {experience}
                     </span>
                   </li>

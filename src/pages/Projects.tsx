@@ -76,7 +76,7 @@ const Projects = () => {
                 </div>
               </div>
               <CardHeader>
-                <CardTitle className="text-xl group-hover:text-primary transition-colors">
+                <CardTitle className="text-xl group-hover:text-accent transition-colors">
                   {project.title}
                 </CardTitle>
               </CardHeader>
@@ -85,7 +85,7 @@ const Projects = () => {
                 
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech) => (
-                    <Badge key={tech} variant="secondary" className="text-xs">
+                    <Badge key={tech} variant="secondary" className="text-xs text-accent">
                       {tech}
                     </Badge>
                   ))}
@@ -134,7 +134,7 @@ const Projects = () => {
                 </div>
               </div>
               <CardHeader className="pb-3">
-                <CardTitle className="text-lg group-hover:text-primary transition-colors">
+                <CardTitle className="text-lg group-hover:text-accent transition-colors">
                   {project.title}
                 </CardTitle>
               </CardHeader>
@@ -143,12 +143,12 @@ const Projects = () => {
                 
                 <div className="flex flex-wrap gap-1">
                   {project.technologies.slice(0, 3).map((tech) => (
-                    <Badge key={tech} variant="secondary" className="text-xs">
+                    <Badge key={tech} variant="secondary" className="text-xs text-accent">
                       {tech}
                     </Badge>
                   ))}
                   {project.technologies.length > 3 && (
-                    <Badge variant="outline" className="text-xs">
+                    <Badge variant="outline" className="text-xs text-accent border-accent">
                       +{project.technologies.length - 3}
                     </Badge>
                   )}

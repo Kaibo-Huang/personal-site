@@ -40,7 +40,7 @@ const Blog = () => {
   };
 
   return (
-    <div className="min-h-screen px-4 sm:px-0">
+    <div className="min-h-screen bg-transparent px-4 sm:px-0">
       <WavyDivider />
       {/* 
       Featured Posts
@@ -91,7 +91,7 @@ const Blog = () => {
         </h2>
         <div className="space-y-6">
           {blogPosts.map((post) => (
-            <Card key={post.id} className="group border-line-primary hover:shadow-md transition-all duration-300">
+            <Card key={post.id} className="group border-primary hover:shadow-md transition-all duration-300">
               <CardContent className="p-6">
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                   <div className="flex-1 space-y-3">
@@ -102,12 +102,12 @@ const Blog = () => {
                       <Clock className="w-4 h-4" />
                       <span>{post.readTime}</span>
                       <span>•</span>
-                      <Badge variant="outline" className="text-xs">
+                      <Badge variant="outline" className="text-xs text-accent border-accent">
                         {post.category}
                       </Badge>
                     </div>
                     
-                    <h3 className="text-lg font-semibold group-hover:text-primary transition-colors">
+                    <h3 className="text-lg font-semibold group-hover:text-accent transition-colors">
                       {post.title}
                     </h3>
                     
@@ -119,7 +119,7 @@ const Blog = () => {
                   <Button variant="ghost" asChild>
                     <a href={`/blog/${post.slug}`}>
                       Read more
-                      <ArrowRight className="w-4 h-4 ml-2" />
+                      <ArrowRight className="w-4 h-4 ml-2 group-hover:text-accent" />
                     </a>
                   </Button>
                 </div>

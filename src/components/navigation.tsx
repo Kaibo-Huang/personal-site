@@ -41,7 +41,7 @@ const Navigation = () => {
                 className={`text-sm font-medium transition-colors hand-drawn-line group cursor-pointer ${
                   isActive(item.path)
                     ? "text-primary"
-                    : "text-muted-foreground hover:text-primary"
+                    : "text-foreground hover:text-accent"
                 }`}
               >
                 <span className={`relative

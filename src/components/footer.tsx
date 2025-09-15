@@ -14,7 +14,7 @@ const Footer = () => (
         <div className="h-0.5 w-32 bg-primary/40 rounded" />
       </div>
       <div className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-xl mx-auto">
-        <p className="text-lg text-muted-foreground whitespace-nowrap mb-2 sm:mb-0">
+        <p className="text-lg text-foreground whitespace-nowrap mb-2 sm:mb-0">
           feel free to reach out about anything
         </p>
         <div className="flex gap-2">
@@ -22,10 +22,12 @@ const Footer = () => (
             <a
               key={social.name}
               href={social.href}
-              className={`p-3 rounded-full bg-secondary hover:bg-accent transition-all duration-300 hover:scale-110 flex items-center justify-center ${social.color}`}
+              className={`p-3 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110
+                bg-[hsl(40,40%,60%)] dark:bg-secondary
+                ${social.color}`}
               aria-label={social.name}
             >
-              <social.icon className="w-6 h-6" />
+              <social.icon className="w-6 h-6 text-[hsl(25,15%,25%)] dark:text-primary" />
             </a>
           ))}
         </div>
