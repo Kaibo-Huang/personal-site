@@ -7,7 +7,7 @@ import Footer from "@/components/footer";
 const Home = () => {
   // Helper for underline animation on bolded words
   const BoldUnderline = ({ children }: { children: React.ReactNode }) => (
-    <span className="font-bold relative bold-underline">
+    <span className="font-bold relative bold-underline text-gray-290">
       <span className="relative z-10">{children}</span>
       <span
         className="
