@@ -48,7 +48,7 @@ const Home = () => {
   ];
 
   return (
-    <div className="min-h-screen dark:bg-background px-4 sm:px-0">
+    <div className="min-h-screen bg-transparent px-4 sm:px-0">
       {/* Hero Section */}
       <section className="max-w-4xl mx-auto pt-16 pb-8">
         <div className="flex flex-col lg:flex-row gap-8 items-center">

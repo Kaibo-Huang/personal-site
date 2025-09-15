@@ -8,9 +8,9 @@ const socialLinks = [
 ];
 
 const Footer = () => (
-  <footer className="section-container-tight py-10">
+  <footer className="section-container-tight pb-10">
     <div className="text-center space-y-8">
-      <div className="w-full flex justify-center mb-8">
+      <div className="w-full flex justify-center">
         <div className="h-0.5 w-32 bg-primary/40 rounded" />
       </div>
       <div className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-xl mx-auto">

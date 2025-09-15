@@ -18,7 +18,7 @@ const Navigation = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="border-b px-4 sm:px-0" style={{ borderColor: "hsl(var(--primary) / 0.4)" }}>
+    <nav className="px-4 sm:px-0">
       <div className="max-w-4xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo/Name */}
