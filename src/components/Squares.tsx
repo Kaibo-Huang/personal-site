@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import '../square.css';
+import '../Square.css';
 
 type CanvasStrokeStyle = string | CanvasGradient | CanvasPattern;
 

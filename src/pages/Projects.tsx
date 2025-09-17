@@ -34,7 +34,7 @@ const Projects = () => {
     {
       id: 1,
       title: "API Proxy Deployment & Management @ RBC",
-      description: "AI Plant Sustainability: Track plants, identify species from images, generate AI-powered care guides, explore 560,000+ preset plants from across the globe, and more",
+      description: "Engineered a proxy deployment and built RESTful APIs in Go to power a dashboard for SREs to monitor and manage API proxy deployments within the RBC Developer Portal",
       image: "/rbc.jpg",
       technologies: ["PostgresSQL", "Go", "Google Apigee", "MongoDB", "Jest", "React"],
       liveUrl: "https://www.linkedin.com/posts/kaibo88_i-helped-create-the-%F0%9D%90%8C%F0%9D%90%8E%F0%9D%90%92%F0%9D%90%93-%F0%9D%90%88%F0%9D%90%8D%F0%9D%90%8D%F0%9D%90%8E%F0%9D%90%95%F0%9D%90%80-activity-7365204287515267072-z8jN?utm_source=share&utm_medium=member_desktop&rcm=ACoAADrQLZ8Bmx5fRT8Dz5R4YjnsVbgzE-Wo0g4",
