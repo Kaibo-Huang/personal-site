@@ -3,6 +3,7 @@ import { Card } from "@/components/ui/card";
 import WavyDivider from "@/components/wavy-divider";
 import { Github, Linkedin, Mail, Twitter } from "lucide-react";
 import Footer from "@/components/footer";
+import { Link } from "react-router-dom"; // Add this import
 
 const Home = () => {
   const BoldUnderline = ({ children }: { children: React.ReactNode }) => (
@@ -128,10 +129,10 @@ const Home = () => {
             variant="outline"
             asChild
           >
-            <a href="/projects" className="relative z-10 transition-colors duration-300 group-hover:text-background">
+            <Link to="/projects" className="relative z-10 transition-colors duration-300 group-hover:text-background">
               I'm always building. Check it out! →
               <span className="absolute inset-0 -z-10 bg-primary scale-x-0 transition-transform duration-500 origin-left group-hover:scale-x-100"></span>
-            </a>
+            </Link>
           </Button>
         </div>
       </section>
