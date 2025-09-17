@@ -119,7 +119,7 @@ const Home = () => {
       <section className="section-container-tight py-5">
         <div className="text-center space-y-8">
           <Button 
-            className="group relative mx-auto mb-8 px-14 py-7 text-lg font-semibold rounded-xl border border-line-primary bg-muted text-foreground overflow-hidden"
+            className="group relative mx-auto px-14 py-7 text-lg font-semibold rounded-xl border border-line-primary bg-muted text-foreground overflow-hidden"
             size="lg"
             variant="outline"
             asChild

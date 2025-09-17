@@ -1,10 +1,10 @@
 import { Github, Linkedin, Mail, Twitter } from "lucide-react";
 
 const socialLinks = [
-  { name: "GitHub", icon: Github, href: "#", color: "hover:text-gray-900 dark:hover:text-gray-100" },
-  { name: "LinkedIn", icon: Linkedin, href: "#", color: "hover:text-blue-600" },
-  { name: "Email", icon: Mail, href: "mailto:your.email@example.com", color: "hover:text-red-500" },
-  { name: "Twitter", icon: Twitter, href: "#", color: "hover:text-blue-400" },
+  { name: "GitHub", icon: Github, href: "https://github.com/Kaibo-Huang", color: "hover:text-gray-900 dark:hover:text-gray-100" },
+  { name: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/in/kaibo88/", color: "hover:text-blue-600" },
+  { name: "Email", icon: Mail, href: "mailto:kaibo.huang@outlook.com", color: "hover:text-red-500" },
+  { name: "Twitter", icon: Twitter, href: "https://x.com/kaibo_huang", color: "hover:text-blue-400" },
 ];
 
 const Footer = () => (

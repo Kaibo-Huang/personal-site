@@ -17,42 +17,80 @@ interface Project {
 }
 
 const Projects = () => {
-  const projects: Project[] = [
+
+  const featuredProject: Project[] = [
     {
       id: 1,
-      title: "Title",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam eros, a bibendum nulla sapien eget urna.",
-      image: "/api/placeholder/400/250",
-      technologies: ["Python", "Pandas", "Scikit-learn", "React", "D3.js", "PostgreSQL"],
-      githubUrl: "#",
-      liveUrl: "#",
+      title: "My Nodes",
+      description: "Obsidian Graph Organizer: A tool that imports your documents, extracts and labels topics with NLP, and builds an interactive graph of conceptual connections. The graph reveals recurring ideas across multiple notes, helping you see patterns and relationships hidden within your documents.",
+      image: "/obsidian.jpeg",
+      technologies: ["Django", "Hugging Face", "AWS", "MongoDB", "React", ],
+      githubUrl: "https://github.com/Blynkosaur/My-Nodes",
       featured: true
+    },
+  ];
+  const projects: Project[] = [
+
+    {
+      id: 1,
+      title: "API Proxy Deployment & Management @ RBC",
+      description: "AI Plant Sustainability: Track plants, identify species from images, generate AI-powered care guides, explore 560,000+ preset plants from across the globe, and more",
+      image: "/rbc.jpg",
+      technologies: ["PostgresSQL", "Go", "Google Apigee", "MongoDB", "Jest", "React"],
+      liveUrl: "https://www.linkedin.com/posts/kaibo88_i-helped-create-the-%F0%9D%90%8C%F0%9D%90%8E%F0%9D%90%92%F0%9D%90%93-%F0%9D%90%88%F0%9D%90%8D%F0%9D%90%8D%F0%9D%90%8E%F0%9D%90%95%F0%9D%90%80-activity-7365204287515267072-z8jN?utm_source=share&utm_medium=member_desktop&rcm=ACoAADrQLZ8Bmx5fRT8Dz5R4YjnsVbgzE-Wo0g4",
+      featured: false
     },
     {
       id: 2,
-      title: "Title",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae velit ex. Mauris dapibus risus quis suscipit vulputate.",
-      image: "/api/placeholder/400/250",
-      technologies: ["Python", "Apache Kafka", "AWS", "Docker", "PostgreSQL", "Redis"],
+      title: "IOGarden (Hack the 6ix Winner)",
+      description: "AI Plant Sustainability: Track plants, identify species from images, generate AI-powered care guides, explore 560,000+ preset plants from across the globe, and more",
+      image: "/IMG_project1.jpg",
+      technologies: ["Python", "MongoDB", "React", "Gemini API", "Flask"],
       githubUrl: "#",
+      liveUrl: "https://devpost.com/software/iogarden",
       featured: false
     },
     {
       id: 3,
-      title: "Title",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus.",
-      image: "/api/placeholder/400/250",
-      technologies: ["Python", "Transformers", "FastAPI", "Elasticsearch", "Docker"],
+      title: "TickleMahPickle (Jamhacks 9)",
+      description: "In a pickle? Just tickle loan. TickleMahPickle makes splitting expenses easy by using graph theory to minimize the number of transactions within a friend group",
+      image: "/pickle.png",
+      technologies: ["NodeJS", "MongoDB", "React", "Vercel"],
       githubUrl: "#",
-      liveUrl: "#"
+      liveUrl: "https://dorahacks.io/buidl/26374/",
+      featured: false
     },
     {
       id: 4,
-      title: "Title",
+      title: "Osu!",
+      description: "Java Swing rhythm game inspired by Osu! featuring four difficulty levels, a leaderboard, and a guided tutorial. Built custom graphics from scratch with Java Swing",
+      image: "/osu1.png",
+      technologies: ["Java"],
+      githubUrl: "https://github.com/Kaibo-Huang/OSU",
+    },
+    {
+      id: 5,
+      title: "Collection of Arduino Projects",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque placerat facilisis egestas. Nam ultricies, diam nec convallis cursus.",
-      image: "/api/placeholder/400/250",
-      technologies: ["Java", "Spring Boot", "React", "PostgreSQL", "Grafana"],
-      githubUrl: "#"
+      image: "/arduino.webp",
+      technologies: ["C++", "Arduino", "Robotics"],
+      githubUrl: "https://docs.google.com/document/d/1FebrJY8UgfnYXnMcGgiJh62A-JAHltgnmvRX2ptKpD0/edit?usp=sharing"
+    },
+    {
+      id: 6,
+      title: "Email Automation Script for ",
+      description: "Google Apps Script that automates email notifications for my high school",
+      image: "/StudentSuccess.png",
+      technologies: ["Javascript"],
+      githubUrl: "https://github.com/Kaibo-Huang/Email-Automation"
+    },
+    {
+      id: 7,
+      title: "Pong",
+      description: `A modern implementation of Pong built using Java Swing. This project recreates the arcade experience with two-player gameplay, smooth animations, and pong ball momentum that responds realistically to paddle movements.`,
+      image: "/Pong.png",
+      technologies: ["C++", "Arduino", "Robotics"],
+      githubUrl: "https://docs.google.com/document/d/1FebrJY8UgfnYXnMcGgiJh62A-JAHltgnmvRX2ptKpD0/edit?usp=sharing"
     }
   ];
 
@@ -68,11 +106,15 @@ const Projects = () => {
           </span>
         </h2>
         <div className="grid md:grid-cols-1 gap-8 mb-12">
-          {projects.filter(project => project.featured).map((project) => (
+          {featuredProject.filter(project => project.featured).map((project) => (
             <Card key={project.id} className="group overflow-hidden border-line-primary hover:shadow-lg transition-all duration-300">
               <div className="aspect-[3/1] bg-muted overflow-hidden">
                 <div className="w-full h-full bg-gradient-to-br from-line-secondary to-line-primary flex items-center justify-center">
-                  <span className="text-white font-medium">Project Image</span>
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
               <CardHeader>
@@ -130,7 +172,11 @@ const Projects = () => {
             <Card key={project.id} className="group overflow-hidden border-line-primary hover:shadow-md transition-all duration-300">
               <div className="aspect-video bg-muted overflow-hidden">
                 <div className="w-full h-full bg-gradient-to-br from-line-secondary to-line-primary flex items-center justify-center">
-                  <span className="text-white text-sm">Project Image</span>
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
               <CardHeader className="pb-3">
@@ -142,7 +188,7 @@ const Projects = () => {
                 <p className="text-sm text-muted-foreground line-clamp-3">{project.description}</p>
                 
                 <div className="flex flex-wrap gap-1">
-                  {project.technologies.slice(0, 3).map((tech) => (
+                  {project.technologies.slice(0, 4).map((tech) => (
                     <Badge key={tech} variant="secondary" className="text-xs text-accent">
                       {tech}
                     </Badge>
