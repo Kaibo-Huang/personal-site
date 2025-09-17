@@ -5,7 +5,6 @@ import { Github, Linkedin, Mail, Twitter } from "lucide-react";
 import Footer from "@/components/footer";
 
 const Home = () => {
-  // Helper for underline animation on bolded words
   const BoldUnderline = ({ children }: { children: React.ReactNode }) => (
     <span className="font-bold relative bold-underline text-foreground">
       <span className="relative z-10">{children}</span>
@@ -56,10 +55,15 @@ const Home = () => {
           <div className="flex justify-center lg:justify-start flex-shrink-0">
             <div className="relative">
               <div className="w-72 h-72 rounded-full bg-muted hand-drawn-circle overflow-hidden animate-float">
-                {/* Placeholder for profile image */}
-                <div className="w-full h-full bg-gradient-to-br from-line-secondary to-line-primary flex items-center justify-center">
-                  <span className="text-7xl font-light text-white">KH</span>
-                </div>
+                <img
+                  src="headshot.jpg"
+                  alt="Profile"
+                  className="w-full h-full object-cover object-center"
+                  onError={(e) => {
+                    console.error("Image failed to load");
+                    e.currentTarget.src = "https://via.placeholder.com/300";
+                  }}
+                />
               </div>
               {/* Subtle glow effect */}
               <div className="absolute inset-0 w-72 h-72 rounded-full bg-line-primary opacity-20 blur-xl -z-10"></div>
