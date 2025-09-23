@@ -32,14 +32,15 @@ const App = () => (
             <div style={{
               position: "fixed",
               inset: 0,
-              width: "100vw",
-              height: "100vh",
+              width: "100%", 
+              height: "100%",
               zIndex: 0,
-              pointerEvents: "none"
+              pointerEvents: "none",
+              overflow: "hidden"
             }}>
               <Squares
                 speed={0.1}
-                squareSize={44}
+                squareSize={typeof window !== 'undefined' ? (window.innerWidth < 640 ? 36 : 44) : 44}
                 direction="diagonal"
                 borderColor="rgb(39, 30, 55)"
                 hoverFillColor="#222"

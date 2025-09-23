@@ -27,15 +27,15 @@ const BlogPost = () => {
         </Button>
       </div>
       <section className="max-w-2xl mx-auto pt-4 pb-8">
-        <Card className="bg-background/80 border-line-primary shadow-lg">
-          <CardHeader>
-            <CardTitle className="text-3xl mb-2">{post.title}</CardTitle>
+        <Card className="bg-background/80 border-line-primary shadow-lg overflow-hidden">
+          <CardHeader className="px-4 sm:px-6">
+            <CardTitle className="text-3xl mb-2 break-words">{post.title}</CardTitle>
             <div className="text-xs text-muted-foreground mb-2">
               {post.date} &middot; {post.author}
             </div>
           </CardHeader>
-          <CardContent>
-            <div className="prose prose-invert max-w-none text-foreground">
+          <CardContent className="px-4 sm:px-6 overflow-x-hidden">
+            <div className="prose prose-invert max-w-none text-foreground break-words">
               {post.content.split('\n').map((line, i) => (
                 <p key={i}>{line}</p>
               ))}

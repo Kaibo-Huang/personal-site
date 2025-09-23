@@ -95,17 +95,17 @@ const Projects = () => {
   ];
 
   return (
-    <div className="min-h-screen px-4 sm:px-0">
+    <div className="min-h-screen px-5 sm:px-6 lg:px-0 overflow-hidden">
       <WavyDivider />
 
-      <section className="max-w-4xl mx-auto pt-16 pb-8">
-        <h2 className="text-2xl font-semibold mb-8 text-foreground group cursor-pointer">
+      <section className="max-w-4xl mx-auto pt-10 sm:pt-16 pb-8 overflow-x-hidden">
+        <h2 className="text-2xl font-semibold mb-6 sm:mb-8 text-foreground group cursor-pointer">
           <span className="relative
             before:absolute before:left-0 before:-bottom-1 before:h-0.5 before:bg-primary before:w-0 before:transition-all before:duration-300 group-hover:before:w-full">
             Currently Building
           </span>
         </h2>
-        <div className="grid md:grid-cols-1 gap-8 mb-12">
+        <div className="grid md:grid-cols-1 gap-6 sm:gap-8 mb-10 sm:mb-12 overflow-hidden">
           {featuredProject.filter(project => project.featured).map((project) => (
             <Card key={project.id} className="group overflow-hidden border-line-primary hover:shadow-lg transition-all duration-300">
               <div className="aspect-[3/1] bg-muted overflow-hidden">
@@ -117,13 +117,13 @@ const Projects = () => {
                   />
                 </div>
               </div>
-              <CardHeader>
-                <CardTitle className="text-xl group-hover:text-accent transition-colors">
+              <CardHeader className="px-5 py-5 sm:px-6">
+                <CardTitle className="text-xl group-hover:text-accent transition-colors break-words">
                   {project.title}
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-muted-foreground">{project.description}</p>
+              <CardContent className="space-y-4 px-5 sm:px-6 pb-5 overflow-hidden">
+                <p className="text-muted-foreground break-words">{project.description}</p>
                 
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech) => (
@@ -160,14 +160,14 @@ const Projects = () => {
       <WavyDivider />
 
       {/* All Projects */}
-      <section className="max-w-4xl mx-auto pb-8">
-        <h2 className="text-2xl font-semibold mb-8 text-foreground group cursor-pointer">
+      <section className="max-w-4xl mx-auto pb-8 overflow-x-hidden">
+        <h2 className="text-2xl font-semibold mb-6 sm:mb-8 text-foreground group cursor-pointer">
           <span className="relative
             before:absolute before:left-0 before:-bottom-1 before:h-0.5 before:bg-primary before:w-0 before:transition-all before:duration-300 group-hover:before:w-full">
             All Projects
           </span>
         </h2>
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-6 overflow-hidden">
           {projects.map((project) => (
             <Card key={project.id} className="group overflow-hidden border-line-primary hover:shadow-md transition-all duration-300">
               <div className="aspect-video bg-muted overflow-hidden">
@@ -179,13 +179,13 @@ const Projects = () => {
                   />
                 </div>
               </div>
-              <CardHeader className="pb-3">
-                <CardTitle className="text-lg group-hover:text-accent transition-colors">
+              <CardHeader className="pb-3 px-5 sm:px-6">
+                <CardTitle className="text-lg group-hover:text-accent transition-colors break-words">
                   {project.title}
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-3">
-                <p className="text-sm text-muted-foreground line-clamp-3">{project.description}</p>
+              <CardContent className="space-y-3 px-5 sm:px-6 pb-5 overflow-hidden">
+                <p className="text-sm text-muted-foreground line-clamp-3 break-words">{project.description}</p>
                 
                 <div className="flex flex-wrap gap-1">
                   {project.technologies.slice(0, 4).map((tech) => (

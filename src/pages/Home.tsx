@@ -3,7 +3,7 @@ import { Card } from "@/components/ui/card";
 import WavyDivider from "@/components/wavy-divider";
 import { Github, Linkedin, Mail, Twitter } from "lucide-react";
 import Footer from "@/components/footer";
-import { Link } from "react-router-dom"; // Add this import
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const BoldUnderline = ({ children }: { children: React.ReactNode }) => (
@@ -48,14 +48,14 @@ const Home = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-transparent px-4 sm:px-0">
+    <div className="min-h-screen bg-transparent px-5 sm:px-6 lg:px-0 overflow-hidden">
       {/* Hero Section */}
-      <section className="max-w-4xl mx-auto pt-16 pb-8">
-        <div className="flex flex-col lg:flex-row gap-8 items-center">
+      <section className="max-w-4xl mx-auto pt-12 sm:pt-16 pb-8 overflow-x-hidden">
+        <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 items-center">
           {/* Profile Image */}
-          <div className="flex justify-center lg:justify-start flex-shrink-0">
+          <div className="flex justify-center lg:justify-start flex-shrink-0 mb-6 lg:mb-0">
             <div className="relative">
-              <div className="w-72 h-72 rounded-full bg-muted hand-drawn-circle overflow-hidden animate-float">
+              <div className="w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 rounded-full bg-muted hand-drawn-circle overflow-hidden animate-float mx-auto lg:mx-0">
                 <img
                   src="headshot.jpg"
                   alt="Profile"
@@ -66,27 +66,27 @@ const Home = () => {
                   }}
                 />
               </div>
-              {/* Subtle glow effect */}
-              <div className="absolute inset-0 w-72 h-72 rounded-full bg-line-primary opacity-20 blur-xl -z-10"></div>
+              {/* Subtle glow effect - matched to image size */}
+              <div className="absolute inset-0 w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 rounded-full bg-line-primary opacity-20 blur-xl -z-10"></div>
             </div>
           </div>
 
           {/* About Content */}
-          <div className="space-y-6 flex-1 lg:ml-8">
-            <div>
-              <h2 className="text-2xl font-semibold mb-4 text-foreground group cursor-pointer">
-                <span className="relative
+          <div className="space-y-6 flex-1 w-full lg:ml-8 overflow-x-hidden">
+            <div className="overflow-x-hidden">
+              <h2 className="text-2xl font-semibold mb-4 text-foreground group cursor-pointer text-center lg:text-left">
+                <span className="relative inline-block
                   before:absolute before:left-0 before:-bottom-1 before:h-0.5 before:bg-primary before:w-0 before:transition-all before:duration-300 group-hover:before:w-full">
                   About me:
                 </span>
               </h2>
-              <ul className="list-disc pl-6 space-y-3">
+              <ul className="list-inside sm:list-outside pl-0 sm:pl-6 space-y-3 text-left max-w-full overflow-hidden">
                 {aboutPoints.map((point, index) => (
                   <li 
                     key={index} 
-                    className="group text-muted-foreground cursor-pointer align-top"
+                    className="group text-muted-foreground cursor-pointer align-top overflow-hidden"
                   >
-                    <span className="inline-block transition-colors transition-transform duration-200 group-hover:text-accent group-hover:translate-x-1 align-top">
+                    <span className="inline-block transition-colors transition-transform duration-200 group-hover:text-accent group-hover:translate-x-1 align-top break-words max-w-full">
                       {point}
                     </span>
                   </li>
@@ -94,20 +94,20 @@ const Home = () => {
               </ul>
             </div>
 
-            <div>
-              <h3 className="text-xl font-medium mb-3 text-foreground group cursor-pointer">
-                <span className="relative
+            <div className="overflow-x-hidden">
+              <h3 className="text-xl font-medium mb-3 text-foreground group cursor-pointer text-center lg:text-left">
+                <span className="relative inline-block
                   before:absolute before:left-0 before:-bottom-1 before:h-0.5 before:bg-primary before:w-0 before:transition-all before:duration-300 group-hover:before:w-full">
                   Previously I've:
                 </span>
               </h3>
-              <ul className="list-disc pl-6 space-y-2">
+              <ul className="list-inside sm:list-outside pl-0 sm:pl-6 space-y-2 text-left max-w-full overflow-hidden">
                 {previousExperience.map((experience, index) => (
                   <li 
                     key={index} 
-                    className="group text-muted-foreground cursor-pointer"
+                    className="group text-muted-foreground cursor-pointer pl-1"
                   >
-                    <span className="inline-block transition-colors transition-transform duration-200 group-hover:text-accent group-hover:translate-x-1">
+                    <span className="inline-block transition-colors transition-transform duration-200 group-hover:text-accent group-hover:translate-x-1 break-words max-w-full">
                       {experience}
                     </span>
                   </li>
@@ -121,21 +121,22 @@ const Home = () => {
       <WavyDivider />
 
       {/* Contact Section */}
-      <section className="section-container-tight py-5">
-        <div className="text-center space-y-8">
+      <section className="py-5 px-4 sm:px-6 lg:px-0 max-w-4xl mx-auto">
+        <div className="text-center">
           <Button 
-            className="group relative mx-auto px-14 py-7 text-lg font-semibold rounded-xl border border-line-primary bg-muted text-foreground overflow-hidden"
+            className="group relative mx-auto px-4 sm:px-6 md:px-8 py-4 sm:py-6 text-base sm:text-lg font-semibold rounded-xl border border-line-primary bg-muted text-foreground overflow-hidden w-full max-w-[90%] sm:max-w-xs md:max-w-md"
             size="lg"
             variant="outline"
             asChild
           >
-            <Link to="/projects" className="relative z-10 transition-colors duration-300 group-hover:text-background">
-              I'm always building. Check it out! →
+            <Link to="/projects" className="relative z-10 transition-colors duration-300 group-hover:text-background whitespace-normal">
+              I'm always building. Check it out!
               <span className="absolute inset-0 -z-10 bg-primary scale-x-0 transition-transform duration-500 origin-left group-hover:scale-x-100"></span>
             </Link>
           </Button>
         </div>
       </section>
+      
       <Footer />
     </div>
   );
